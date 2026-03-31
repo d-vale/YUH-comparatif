@@ -1,10 +1,14 @@
 export default function Hero() {
   return (
-    <section className="relative w-full overflow-hidden bg-white min-h-[700px] flex items-center">
+    <section className="relative w-full bg-white min-h-[700px] flex items-center">
       {/* Background blobs */}
       <div
-        className="absolute inset-0 pointer-events-none"
+        className="absolute inset-0 pointer-events-none h-[calc(100%+10px)]"
         aria-hidden="true"
+        style={{
+          maskImage: 'linear-gradient(to bottom, transparent 0%, black 80%, black 72%, transparent 100%)',
+          WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 80%, black 72%, transparent 100%)',
+        }}
       >
         <svg
           viewBox="0 0 1514 800"
@@ -28,7 +32,7 @@ export default function Hero() {
 
       <div className="relative max-w-[1412px] mx-auto px-10 w-full pt-[110px] pb-20 flex items-center justify-between gap-8">
         {/* Left content */}
-        <div className="flex flex-col gap-[40px] flex-1">
+        <div className="flex flex-col gap-[30px] flex-1">
           <div className="flex flex-col gap-[13px]">
             <h1 className="text-h1 font-extrabold text-black">
               <span className="text-orange">Comparez</span>{' '}les néobanques :{' '}

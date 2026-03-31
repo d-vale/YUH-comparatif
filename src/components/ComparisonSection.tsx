@@ -66,13 +66,13 @@ const categories: Category[] = [
   },
 ]
 
-const tabs = ['Banque traditionnelle', 'Neon', 'Zak', 'Revolut']
+const tabs = ['Banque traditionnelle', 'Neon', 'N26', 'Revolut', 'Zak']
 
 export default function ComparisonSection() {
   const [activeTab, setActiveTab] = useState(0)
 
   return (
-    <section className="w-full bg-white py-16">
+    <section className="w-full bg-transparent py-16">
       <div className="max-w-[1412px] mx-auto px-10">
         {/* Header */}
         <div className="text-center mb-10 max-w-[892px] mx-auto">
@@ -87,14 +87,14 @@ export default function ComparisonSection() {
 
         {/* Filter tabs */}
         <div className="flex justify-center mb-8">
-          <div className="flex gap-2 bg-pale-violet-1 rounded-full p-1">
+          <div className="flex gap-[21px] bg-white/70 backdrop-blur-[20px] rounded-full px-[18px] py-[6px] border border-white shadow-[0px_2px_40px_0px_rgba(0,0,0,0.08)]">
             {tabs.map((tab, i) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(i)}
-                className={`px-5 py-2 rounded-full text-body-bold font-bold transition-colors ${
+                className={`px-[10px] py-[10px] text-body-bold font-extrabold transition-colors whitespace-nowrap ${
                   activeTab === i
-                    ? 'bg-black text-white'
+                    ? 'text-orange'
                     : 'text-grey hover:text-black'
                 }`}
               >

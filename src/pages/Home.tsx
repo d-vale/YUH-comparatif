@@ -9,8 +9,10 @@ export default function Home() {
   return (
     <main className="w-full overflow-x-hidden font-proxima-soft">
       <Navbar />
-      <Hero />
-      <ComparisonSection />
+      <div className="relative overflow-x-hidden">
+        <Hero />
+        <ComparisonSection />
+      </div>
       <CTAOpenAccount />
       <FAQ />
       <Footer />
