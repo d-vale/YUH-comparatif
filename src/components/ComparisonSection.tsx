@@ -254,29 +254,34 @@ export default function ComparisonSection() {
         </div>
 
         {/* Navigation arrows */}
-        <div className="flex justify-end mt-4 gap-2">
-          <button className="w-12 h-12 rounded-full border border-color-24 flex items-center justify-center hover:bg-pale-violet-1 transition-colors">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path
-                d="M10 3L5 8l5 5"
-                stroke="#151a21"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
-          <button className="w-12 h-12 rounded-full border border-color-24 flex items-center justify-center hover:bg-pale-violet-1 transition-colors">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path
-                d="M6 3l5 5-5 5"
-                stroke="#151a21"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
+        <div className="flex justify-between items-center mt-9">
+          {activeTab > 0 ? (
+            <button
+              onClick={() => setActiveTab(activeTab - 1)}
+              className="flex items-center gap-[9px]"
+            >
+              <div className="w-12 h-12 rounded-full border-2 border-orange flex items-center justify-center">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M15 18l-6-6 6-6" stroke="#fa5b35" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+              <span className="text-big-body font-regular text-black">{tabs[activeTab - 1]}</span>
+            </button>
+          ) : <div />}
+
+          {activeTab < tabs.length - 1 ? (
+            <button
+              onClick={() => setActiveTab(activeTab + 1)}
+              className="flex items-center gap-[9px]"
+            >
+              <span className="text-big-body font-regular text-black">{tabs[activeTab + 1]}</span>
+              <div className="w-12 h-12 rounded-full border-2 border-orange flex items-center justify-center">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M9 6l6 6-6 6" stroke="#fa5b35" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+            </button>
+          ) : <div />}
         </div>
       </div>
     </section>
