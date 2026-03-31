@@ -52,7 +52,14 @@ export default function Hero() {
         </div>
 
         {/* Right illustration */}
-        <div className="hidden lg:block flex-shrink-0 w-[474px] h-[474px]" />
+        <div className="hidden lg:block relative flex-shrink-0 w-[474px] h-[500px]">
+          <img
+            src="/yuhperson-dp-4b.svg"
+            alt=""
+            aria-hidden="true"
+            className="absolute bottom-[-60px] right-[-70px] w-[450px] opacity-70"
+          />
+        </div>
       </div>
     </section>
   )
