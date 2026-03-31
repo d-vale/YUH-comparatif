@@ -1,19 +1,17 @@
 export default function Navbar() {
   return (
-    <header className="w-full bg-white shadow-sm sticky top-0 z-50">
-      <div className="max-w-[1412px] mx-auto px-10 h-[72px] flex items-center justify-between">
+    <header className="absolute top-0 left-0 w-full z-50 px-6 pt-3">
+      <div className="max-w-[1412px] mx-auto bg-white/40 backdrop-blur-[20px] border border-white rounded-[100px] shadow-[0px_2px_40px_0px_rgba(0,0,0,0.08)] px-14 h-[72px] flex items-center justify-between">
         {/* Logo */}
         <a href="/" className="flex-shrink-0">
-          <svg width="60" height="28" viewBox="0 0 60 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <text x="0" y="24" fontFamily="Proxima Soft, sans-serif" fontWeight="800" fontSize="28" fill="#151a21">yuh</text>
-          </svg>
+          <img src="/YUH_logo_main_RVB.svg" alt="Yuh" className="h-10 w-auto" />
         </a>
 
         {/* Nav links */}
         <nav className="hidden lg:flex items-center gap-8">
           <a href="#" className="flex items-center gap-1 text-body-bold font-bold text-black hover:text-orange transition-colors">
             App
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="#fa5b35" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
           </a>
           <a href="#" className="text-body-bold font-bold text-black hover:text-orange transition-colors">Tarifs</a>
           <a href="#" className="text-body-bold font-bold text-black hover:text-orange transition-colors">YuhLearn</a>
@@ -25,9 +23,15 @@ export default function Navbar() {
         {/* Right side */}
         <div className="flex items-center gap-4">
           {/* Language */}
-          <button className="hidden lg:flex items-center gap-1 text-body-bold font-bold text-black">
-            <span className="text-lg">🇫🇷</span>
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          <button className="hidden lg:flex items-center gap-2 bg-[rgba(21,26,33,0.05)] rounded-[100px] px-3 py-2">
+            <img
+              src="https://flagcdn.com/w40/fr.png"
+              alt="FR"
+              className="w-[22px] h-[22px] rounded-full object-cover"
+            />
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path d="M3 5l4 4 4-4" stroke="#fa5b35" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
           </button>
           {/* CTA */}
           <a
