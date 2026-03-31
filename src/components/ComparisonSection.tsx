@@ -5,6 +5,7 @@ type Row = {
   yuh: string;
   bank: string;
   yuhHighlight?: boolean;
+  bankHighlight?: boolean;
 };
 type Category = { title: string; rows: Row[] };
 
@@ -24,9 +25,9 @@ const categories: Category[] = [
         bank: "24–48 CHF/an (sauf ZKB : gratuit)",
         yuhHighlight: true,
       },
-      { feature: "IBAN suisse", yuh: "Oui", bank: "Oui" },
-      { feature: "TWINT", yuh: "Oui", bank: "Oui" },
-      { feature: "QR-facture / eBill", yuh: "Oui", bank: "Oui" },
+      { feature: "IBAN suisse", yuh: "Oui", bank: "Oui", bankHighlight: true },
+      { feature: "TWINT", yuh: "Oui", bank: "Oui", bankHighlight: true },
+      { feature: "QR-facture / eBill", yuh: "Oui", bank: "Oui", bankHighlight: true },
     ],
   },
   {
@@ -44,7 +45,7 @@ const categories: Category[] = [
         bank: "2,9–4,6 (variable)",
         yuhHighlight: true,
       },
-      { feature: "Compte jeune", yuh: "Oui", bank: "Oui" },
+      { feature: "Compte jeune", yuh: "Oui", bank: "Oui", bankHighlight: true },
     ],
   },
   {
@@ -149,6 +150,7 @@ const categories: Category[] = [
         feature: "Protection des dépôts",
         yuh: "100k CHF (esisuisse)",
         bank: "100k CHF",
+        bankHighlight: true,
       },
       {
         feature: "Pocket Insurance",
@@ -204,26 +206,26 @@ export default function ComparisonSection() {
         </div>
 
         {/* Comparison table */}
-        <div className="bg-white rounded-2xl border border-color-24 overflow-hidden shadow-sm">
-          {categories.map((cat, ci) => (
+        <div className="space-y-10">
+          {categories.map((cat) => (
             <div
               key={cat.title}
-              className={ci > 0 ? "border-t border-color-24" : ""}
+              className="rounded-3xl overflow-hidden shadow-sm bg-pale-violet-1"
             >
               {/* Category header */}
-              <div className="px-6 py-4 bg-pale-violet-1">
-                <h3 className="text-big-body-bold font-bold text-black">
+              <div className="px-6 py-6 bg-pale-violet-1">
+                <h3 className="text-h3 font-extrabold text-black">
                   {cat.title}
                 </h3>
               </div>
 
               {/* Column headers — every category */}
-              <div className="flex px-6 py-3 border-b border-color-24">
+              <div className="flex px-6 py-3 border-color-24 bg-pale-violet-1">
                 <div className="flex-1" />
-                <div className="w-[280px] text-center text-body-bold font-bold text-black">
+                <div className="w-[280px] text-center text-big-body-bold font-bold text-black">
                   Yuh
                 </div>
-                <div className="w-[280px] text-center text-body-bold font-bold text-black">
+                <div className="w-[280px] text-center text-big-body-bold font-bold text-black">
                   {tabs[activeTab]}
                 </div>
               </div>
@@ -232,17 +234,17 @@ export default function ComparisonSection() {
               {cat.rows.map((row, ri) => (
                 <div
                   key={row.feature}
-                  className={`flex items-center px-6 py-3 ${ri > 0 ? "border-t border-color-24" : ""}`}
+                  className={`flex items-center px-6 py-3 rounded-lg mx-2 my-[2px] ${ri % 2 === 0 ? "bg-pale-violet-2" : "bg-pale-violet-1"}`}
                 >
                   <div className="flex-1 text-body-bold font-regular text-black">
                     {row.feature}
                   </div>
                   <div
-                    className={`w-[280px] text-center text-body-bold font-bold ${row.yuhHighlight ? "text-orange" : "text-black"}`}
+                    className={`w-[280px] text-center text-body-bold font-bold ${row.yuhHighlight ? "text-validations" : "text-black"}`}
                   >
                     {row.yuh}
                   </div>
-                  <div className="w-[280px] text-center text-body-bold font-regular text-grey">
+                  <div className={`w-[280px] text-center text-body-bold font-regular ${row.yuhHighlight ? "text-grey" : row.bankHighlight ? "text-validations" : "text-black"}`}>
                     {row.bank}
                   </div>
                 </div>
