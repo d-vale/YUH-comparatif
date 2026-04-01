@@ -1,6 +1,6 @@
 export default function Navbar() {
   return (
-    <header className="absolute top-0 left-0 w-full z-50 px-6 pt-3">
+    <header className="fixed top-0 left-0 w-full z-50 px-6 pt-3">
       <div className="max-w-[1412px] mx-auto bg-white/40 backdrop-blur-[20px] border border-white rounded-[100px] shadow-[0px_2px_40px_0px_rgba(0,0,0,0.08)] px-14 h-[72px] flex items-center justify-between">
         {/* Logo */}
         <a href="/" className="flex-shrink-0">
