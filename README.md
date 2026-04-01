@@ -1,6 +1,6 @@
 # Yuh Pages
 
-** Équipe DJMKEL **
+**Équipe DJMKEL**
 
 Landing page marketing pour [Yuh](https://www.yuh.com), la néobanque suisse de PostFinance et Swissquote.
 
