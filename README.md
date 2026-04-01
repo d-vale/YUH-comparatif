@@ -33,15 +33,26 @@ npm run lint     # ESLint
 
 ```
 src/
-  pages/
-    Home.tsx              — page principale, orchestre les sections
   components/
-    Navbar.tsx            — navigation avec logo + liens
-    Hero.tsx              — section héro avec background animé
-    ComparisonSection.tsx — comparatif Yuh vs banque traditionnelle (tabs filtrés)
-    CTAOpenAccount.tsx    — 3 étapes pour ouvrir un compte, animé au scroll (GSAP)
-    FAQ.tsx               — accordéon questions/réponses
-    Footer.tsx            — pied de page
+    ui/
+      Container.tsx         — wrapper de layout réutilisable (max-w-[1412px])
+      ButtonCTA.tsx          — bouton d'action principal (orange, solid)
+    Navbar.tsx              — navigation avec logo + liens
+    Hero.tsx                — section héro avec background animé
+    ComparisonSection.tsx   — comparatif Yuh vs néobanques (tabs filtrés)
+    CTAOpenAccount.tsx      — 3 étapes pour ouvrir un compte, animé au scroll (GSAP)
+    FAQ.tsx                 — accordéon questions/réponses
+    Footer.tsx              — pied de page
+  data/
+    comparison.ts           — données du tableau comparatif + types (Row, Category)
+    ctaSteps.ts             — étapes d'ouverture de compte + type Step
+    faq.ts                  — questions FAQ
+    footer.ts               — liens et icônes footer + types
+  pages/
+    Home.tsx                — page principale, assemble les sections
+  App.tsx
+  main.tsx
+  index.css
 public/
   illustration_yuh_app.png    — illustration étape 1 (CTA)
   illustration_yuh_app2.png   — illustration étape 2 (CTA)

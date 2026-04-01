@@ -13,15 +13,26 @@ Landing page marketing pour Yuh (néobanque suisse). Vite + React + TypeScript +
 
 ```
 src/
-  pages/
-    Home.tsx          — page principale, orchestre tous les composants
   components/
-    Navbar.tsx        — barre de navigation
-    Hero.tsx          — section héro avec background animé
-    ComparisonSection.tsx — comparaison Yuh vs banque traditionnelle (tabs)
-    CTAOpenAccount.tsx    — 3 étapes pour ouvrir un compte, scroll-piné (GSAP)
-    FAQ.tsx           — accordéon questions/réponses
-    Footer.tsx        — pied de page
+    ui/
+      Container.tsx         — wrapper de layout réutilisable (max-w-[1412px] mx-auto px-10)
+      ButtonCTA.tsx          — bouton d'action principal (orange solid, size default/small)
+    Navbar.tsx              — barre de navigation
+    Hero.tsx                — section héro avec background animé
+    ComparisonSection.tsx   — comparaison Yuh vs néobanques (tabs)
+    CTAOpenAccount.tsx      — 3 étapes pour ouvrir un compte, scroll-piné (GSAP)
+    FAQ.tsx                 — accordéon questions/réponses
+    Footer.tsx              — pied de page
+  data/
+    comparison.ts           — données du tableau comparatif + types (Row, Category, allBankData, tabs)
+    ctaSteps.ts             — étapes d'ouverture de compte + type Step
+    faq.ts                  — questions FAQ
+    footer.ts               — liens et icônes footer + types (SocialIcon, FooterLinkGroup)
+  pages/
+    Home.tsx                — page principale, orchestre tous les composants
+  App.tsx
+  main.tsx
+  index.css
 public/
   illustration_yuh_app.png   — étape 1 CTA
   illustration_yuh_app2.png  — étape 2 CTA
