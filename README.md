@@ -1,73 +1,79 @@
-# React + TypeScript + Vite
+# Yuh Pages
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+** Équipe DJMKEL **
 
-Currently, two official plugins are available:
+Landing page marketing pour [Yuh](https://www.yuh.com), la néobanque suisse de PostFinance et Swissquote.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Stack
 
-## React Compiler
+| Outil | Version |
+|-------|---------|
+| Vite | 8.0 |
+| React | 19.2 |
+| TypeScript | 5.9 |
+| Tailwind CSS | 3.4 |
+| GSAP | 3.14 |
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Démarrage
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Autres commandes :
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build    # build de production (tsc + vite build)
+npm run preview  # prévisualiser le build
+npm run lint     # ESLint
 ```
+
+## Structure
+
+```
+src/
+  pages/
+    Home.tsx              — page principale, orchestre les sections
+  components/
+    Navbar.tsx            — navigation avec logo + liens
+    Hero.tsx              — section héro avec background animé
+    ComparisonSection.tsx — comparatif Yuh vs banque traditionnelle (tabs filtrés)
+    CTAOpenAccount.tsx    — 3 étapes pour ouvrir un compte, animé au scroll (GSAP)
+    FAQ.tsx               — accordéon questions/réponses
+    Footer.tsx            — pied de page
+public/
+  illustration_yuh_app.png    — illustration étape 1 (CTA)
+  illustration_yuh_app2.png   — illustration étape 2 (CTA)
+  illustration_yuh_app3.png   — illustration étape 3 (CTA)
+  YUH_logo_main_RVB.svg
+  yuhperson-dp-4b.svg
+  icons.svg
+docs/
+  figma-components.md     — inventaire des composants Figma + design tokens
+```
+
+## Design tokens
+
+Définis dans `tailwind.config.js` sous `theme.extend`. Ne pas hardcoder de valeurs.
+
+**Couleurs**
+
+| Classe | Valeur |
+|--------|--------|
+| `bg-orange` / `text-orange` | `#fa5b35` |
+| `text-black` | `#151a21` |
+| `text-grey` | `#7c7c7c` |
+| `bg-color-24` | `#ebe1ee` |
+| `bg-pale-violet-1` | `#f7f1fb` |
+| `text-validations` | `#02b089` |
+
+**Typographie** — police `font-proxima-soft`
+
+`text-title` · `text-h1` · `text-h2` · `text-h3` · `text-big-body` · `text-body-bold` · `text-button-text`
+
+## Figma
+
+- Fichier : https://www.figma.com/design/TzAYJ60Z6gJIZuHcD4Ry3X/Pages
+- Node principal : `72-7226` (LP-banque traditionnelle)
+- Voir `docs/figma-components.md` avant de créer un nouveau composant.
