@@ -23,8 +23,8 @@ export default function ComparisonSection() {
 
         {/* Filter tabs — scrollable on mobile */}
         <div className="flex justify-center mb-6 lg:mb-8">
-          <div className="overflow-x-auto max-w-full">
-            <div className="flex gap-[21px] bg-white/70 backdrop-blur-[20px] rounded-full px-[18px] py-[6px] border border-white shadow-[0px_2px_40px_0px_rgba(0,0,0,0.08)] w-max">
+          <div className="overflow-x-auto max-w-full py-4 px-6">
+            <div className="flex gap-[21px] bg-white/70 backdrop-blur-[5px] rounded-full px-[18px] py-[6px] border border-white shadow-[0px_2px_20px_0px_rgba(0,0,0,0.08)] w-max">
               {tabs.map((tab, i) => (
                 <button
                   key={tab}
