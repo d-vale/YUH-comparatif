@@ -1,10 +1,10 @@
 const socialIcons = [
-  { label: 'X (Twitter)', path: 'M4 4l8 8M12 4l-8 8' },
-  { label: 'Facebook', path: 'M9 8h4M9 12h4M7 16c0-4 2-8 5-8s5 4 5 8' },
-  { label: 'LinkedIn', path: 'M4 8h2v8H4zM5 6a1 1 0 100-2 1 1 0 000 2zM8 8h2v1.5c.5-1 1.5-1.5 2.5-1.5 2 0 3 1 3 3V16h-2v-4c0-1.5-.5-2-1.5-2S10 11 10 12.5V16H8z' },
-  { label: 'YouTube', path: 'M2 8s0-4 6-4h4s6 0 6 4v4s0 4-6 4H8s-6 0-6-4zm6 0l4 2-4 2z' },
-  { label: 'Instagram', path: 'M4 4h12v12H4zM8 10a2 2 0 104 0 2 2 0 00-4 0zm5-3h.5' },
-  { label: 'TikTok', path: 'M9 4v8a3 3 0 103-3V4' },
+  { label: 'X (Twitter)', src: '/footer/X-icon.svg' },
+  { label: 'Facebook',    src: '/footer/facebook-icon.svg' },
+  { label: 'LinkedIn',    src: '/footer/linkedin-icon.svg' },
+  { label: 'YouTube',     src: '/footer/youtube-icon.svg' },
+  { label: 'Instagram',   src: '/footer/instagram-icon.svg' },
+  { label: 'TikTok',      src: '/footer/tiktok-icon.svg' },
 ]
 
 const footerLinks = [
@@ -24,74 +24,66 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-black text-white">
-      <div className="max-w-[1412px] mx-auto px-10 pt-14 pb-6">
-        {/* Top grid */}
+    <footer className="w-full px-6 pb-6">
+      <div className="bg-black text-white rounded-[48px] px-16 pt-14 pb-8">
+
+        {/* Top section */}
         <div className="flex gap-16 mb-16">
-          {/* Left column */}
+
+          {/* Left — CTA + social */}
           <div className="flex-shrink-0 max-w-[360px]">
             <p className="text-mini-text font-regular text-grey mb-3">Démarrer</p>
-            <h3 className="text-h3 font-extrabold text-white mb-6 leading-tight">
+            <h3 className="text-h3 font-extrabold text-white mb-8 leading-tight">
               Télécharge maintenant l'app Yuh et inscris-toi gratuitement!
             </h3>
             <a
               href="#"
-              className="inline-block border-2 border-orange text-orange text-button-text font-bold px-7 py-2.5 rounded-full hover:bg-orange hover:text-white transition-colors mb-8"
+              className="inline-block border border-orange text-orange text-button-text font-bold px-7 py-2.5 rounded-full hover:bg-orange hover:text-white transition-colors mb-10"
             >
               Téléchargez l'app
             </a>
 
             <p className="text-mini-text font-regular text-grey mb-4">Suis-nous</p>
             <div className="flex gap-3">
-              {socialIcons.map(({ label, path }) => (
+              {socialIcons.map(({ label, src }) => (
                 <a
                   key={label}
                   href="#"
                   aria-label={label}
-                  className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
+                  className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:border-white/50 transition-colors"
                 >
-                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                    <path d={path} stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
+                  <img src={src} alt="" aria-hidden="true" width="20" height="20" />
                 </a>
               ))}
             </div>
           </div>
+          
+          {/* Right — nav columns + logo */}
+          <div className="flex-1 flex flex-col gap-8">
+            <div className="flex gap-8 justify-end pt-2">
+              {footerLinks.map(({ heading, links }) => (
+                <div key={heading} className="min-w-[160px]">
+                  <p className="text-mini-text font-regular text-grey mb-6">{heading}</p>
+                  <ul className="flex flex-col gap-5">
+                    {links.map((link) => (
+                      <li key={link}>
+                        <a href="#" className="text-big-body font-bold text-white hover:text-orange transition-colors">
+                          {link}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
 
-          {/* Right columns */}
-          <div className="flex-1 flex gap-8 justify-end">
-            {footerLinks.map(({ heading, links }) => (
-              <div key={heading} className="min-w-[160px]">
-                <p className="text-mini-text font-regular text-grey mb-6">{heading}</p>
-                <ul className="flex flex-col gap-5">
-                  {links.map((link) => (
-                    <li key={link}>
-                      <a href="#" className="text-big-body font-bold text-white hover:text-orange transition-colors">
-                        {link}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Logos */}
-        <div className="flex items-center justify-center gap-8 py-10 border-t border-white/10 border-b border-b-white/10">
-          {/* Yuh wordmark */}
-          <svg width="160" height="70" viewBox="0 0 160 70" fill="none">
-            <text x="0" y="62" fontFamily="Proxima Soft, sans-serif" fontWeight="800" fontSize="72" fill="white">yuh</text>
-          </svg>
-          {/* Divider */}
-          <div className="w-px h-24 bg-white/30" />
-          {/* BSC Young Boys badge */}
-          <div className="w-24 h-24 rounded-full border-2 border-white/40 flex items-center justify-center">
-            <div className="text-center">
-              <div className="text-mini-text font-bold text-white">BSC</div>
-              <div className="text-mini-text font-bold text-white">YOUNG</div>
-              <div className="text-mini-text font-bold text-white">BOYS</div>
-              <div className="text-mini-text font-regular text-white/60">1898</div>
+            {/* Logo aligné sous les colonnes nav */}
+            <div className="flex justify-end">
+              <img
+                src="/footer/logo_footer.png"
+                alt="Yuh"
+                className="w-[550px] object-contain"
+              />
             </div>
           </div>
         </div>
@@ -109,9 +101,10 @@ export default function Footer() {
         </div>
 
         {/* Disclaimer */}
-        <p className="text-mini-text font-regular text-grey/70 pt-3 pb-2 max-w-5xl">
+        <p className="text-mini-text font-regular text-grey/60 border-t border-white/10 pt-3">
           Les informations figurant sur ce site web ne sont pas destinées à être diffusées ou utilisées par toute personne se trouvant dans des pays ou juridictions où une telle diffusion ou utilisation serait contraire aux lois ou réglementations locales.
         </p>
+
       </div>
     </footer>
   )
