@@ -45,7 +45,7 @@ export default function Hero() {
           </div>
           <a
             href="#"
-            className="inline-block self-start bg-orange text-white text-button-text font-bold px-12 py-3 rounded-full hover:bg-orange/90 transition-colors"
+            className="inline-block self-start bg-orange text-white text-button-text font-bold px-12 py-3 rounded-full hover:bg-orange-dark transition-colors"
           >
             Créez votre compte gratuit
           </a>

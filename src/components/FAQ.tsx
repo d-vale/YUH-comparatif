@@ -30,15 +30,16 @@ export default function FAQ() {
                   onClick={() => setOpen(open === i ? null : i)}
                 >
                   <span className="text-big-body-bold font-bold text-black pr-8">{q}</span>
-                  <span className="flex-shrink-0 w-12 h-12 rounded-full border-2 border-orange flex items-center justify-center">
+                  <span className="peer flex-shrink-0 w-12 h-12 rounded-full border-2 border-orange flex items-center justify-center transition-colors hover:bg-orange [&:hover_path]:stroke-white">
                     <svg
                       width="16"
                       height="16"
                       viewBox="0 0 16 16"
                       fill="none"
-                      className={`transition-transform ${open === i ? 'rotate-45' : ''}`}
+                      className="transition-transform"
                     >
-                      <path d="M8 2v12M2 8h12" stroke="#fa5b35" strokeWidth="2" strokeLinecap="round" />
+                      <path d="M2 8h12" stroke="#fa5b35" strokeWidth="2" strokeLinecap="round" />
+                      <path d="M8 2v12" stroke="#fa5b35" strokeWidth="2" strokeLinecap="round" className={`transition-opacity duration-200 ${open === i ? 'opacity-0' : 'opacity-100'}`} />
                     </svg>
                   </span>
                 </button>
@@ -55,7 +56,7 @@ export default function FAQ() {
               <a href="#" className="text-big-body-bold font-bold text-orange hover:underline">
                 D'autres questions? Clique ici pour en savoir plus
               </a>
-              <div className="w-12 h-12 rounded-full bg-orange flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 rounded-full bg-orange flex items-center justify-center flex-shrink-0 hover:bg-orange-dark hover:scale-105 transition-all cursor-pointer">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>

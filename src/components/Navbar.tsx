@@ -36,7 +36,7 @@ export default function Navbar() {
           {/* CTA */}
           <a
             href="#"
-            className="bg-orange text-white text-button-text font-bold px-6 py-2 rounded-full hover:bg-orange/90 transition-colors"
+            className="bg-orange text-white text-button-text font-bold px-6 py-2 rounded-full hover:bg-orange-dark hover:scale-105 transition-all"
           >
             Démarrer
           </a>
