@@ -3,7 +3,7 @@ import ButtonCTA from '@/components/ui/ButtonCTA'
 
 export default function Hero() {
   return (
-    <section className="relative w-full bg-white min-h-[700px] flex items-center">
+    <section className="relative w-full bg-white lg:min-h-[700px] flex items-center">
       {/* Background blobs */}
       <div
         className="absolute inset-0 pointer-events-none h-[calc(100%+10px)]"
@@ -33,16 +33,16 @@ export default function Hero() {
         </svg>
       </div>
 
-      <Container className="relative w-full pt-[110px] pb-20 flex items-center justify-between gap-8">
+      <Container className="relative w-full pt-[90px] lg:pt-[110px] pb-12 lg:pb-20 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
         {/* Left content */}
         <div className="flex flex-col gap-[30px] flex-1">
           <div className="flex flex-col gap-[13px]">
-            <h1 className="text-h1 font-extrabold text-black">
+            <h1 className="text-h2 lg:text-h1 font-extrabold text-black">
               <span className="text-orange">Comparez</span>{' '}les néobanques :{' '}
               <br />
               découvrez l'expérience Yuh
             </h1>
-            <p className="text-[20px] font-regular text-black leading-[30px]">
+            <p className="text-[16px] lg:text-[20px] font-regular text-black leading-[26px] lg:leading-[30px]">
               Choisir une banque en ligne peut être difficile. Comparez les néobanques suisses selon vos besoins et découvrez ce qui fait la différence avec Yuh.
             </p>
           </div>
