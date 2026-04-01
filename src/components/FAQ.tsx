@@ -6,11 +6,11 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(null)
 
   return (
-    <section className="w-full bg-white py-16">
+    <section className="w-full bg-white py-10 lg:py-16">
       <Container>
         <div className="max-w-[1174px] mx-auto">
           {/* Heading */}
-          <h2 className="text-h2 font-extrabold text-black mb-12 max-w-[760px]">
+          <h2 className="text-[28px] leading-[36px] lg:text-h2 font-extrabold text-black mb-8 lg:mb-12 max-w-[760px]">
             Vous hésitez encore? Dites-nous ce qui vous empêche de dormir la nuit!
           </h2>
 
@@ -22,7 +22,7 @@ export default function FAQ() {
                   className="w-full flex items-center justify-between py-5 text-left"
                   onClick={() => setOpen(open === i ? null : i)}
                 >
-                  <span className="text-big-body-bold font-bold text-black pr-8">{q}</span>
+                  <span className="text-body-bold lg:text-big-body-bold font-bold text-black pr-4 lg:pr-8">{q}</span>
                   <span className="peer flex-shrink-0 w-12 h-12 rounded-full border-2 border-orange flex items-center justify-center transition-colors hover:bg-orange [&:hover_path]:stroke-white">
                     <svg
                       width="16"
@@ -37,7 +37,7 @@ export default function FAQ() {
                   </span>
                 </button>
                 {open === i && (
-                  <div className="pb-5 text-big-body font-regular text-grey pr-16">
+                  <div className="pb-5 text-big-body font-regular text-grey pr-4 lg:pr-16">
                     Réponse à venir — consultez le centre d'aide Yuh pour plus d'informations.
                   </div>
                 )}
@@ -45,11 +45,11 @@ export default function FAQ() {
             ))}
 
             {/* Footer link */}
-            <div className="border-t border-color-24 flex items-center justify-between py-5">
+            <div className="border-t border-color-24 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 py-5">
               <a href="#" className="text-big-body-bold font-extrabold text-orange hover:underline">
                 D'autres questions? Clique ici pour en savoir plus
               </a>
-              <div className="w-12 h-12 rounded-full bg-orange flex items-center justify-center flex-shrink-0 hover:bg-orange-dark hover:scale-105 transition-all cursor-pointer">
+              <div className="w-12 h-12 rounded-full bg-orange flex items-center justify-center flex-shrink-0 hover:bg-orange-dark hover:scale-105 transition-all cursor-pointer self-start sm:self-auto">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
