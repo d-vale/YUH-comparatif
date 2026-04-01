@@ -11,6 +11,23 @@ export default function CTAOpenAccount() {
   const sectionRef = useRef<HTMLElement>(null);
   const [stepIdx, setStepIdx] = useState(0);
   const stepRef = useRef(0);
+  const touchStartX = useRef<number>(0);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    const deltaX = e.changedTouches[0].clientX - touchStartX.current;
+    if (Math.abs(deltaX) < 50) return;
+    if (deltaX < 0 && stepRef.current < STEPS.length - 1) {
+      stepRef.current += 1;
+      setStepIdx(stepRef.current);
+    } else if (deltaX > 0 && stepRef.current > 0) {
+      stepRef.current -= 1;
+      setStepIdx(stepRef.current);
+    }
+  };
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -66,7 +83,11 @@ export default function CTAOpenAccount() {
         <div className="relative bg-white rounded-3xl border border-color-24 shadow-[0_24px_70px_-18px_rgba(21,26,33,0.28)] overflow-hidden flex flex-col lg:flex-row lg:items-center lg:min-h-[520px]">
 
           {/* Left — illustration + stepper (desktop) */}
-          <div className="relative flex-1 flex items-center justify-center p-8 lg:p-12 lg:min-h-[480px] overflow-hidden">
+          <div
+            className="relative flex-1 flex items-center justify-center p-8 lg:p-12 lg:min-h-[480px] overflow-hidden"
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+          >
 
             {/* Stepper gauche — desktop only */}
             <div className="hidden lg:block absolute left-[46px] top-[76px] bottom-[76px]">
