@@ -53,7 +53,7 @@ export default function FAQ() {
 
             {/* Footer link */}
             <div className="border-t border-color-24 flex items-center justify-between py-5">
-              <a href="#" className="text-big-body-bold font-bold text-orange hover:underline">
+              <a href="#" className="text-big-body-bold font-extrabold text-orange hover:underline">
                 D'autres questions? Clique ici pour en savoir plus
               </a>
               <div className="w-12 h-12 rounded-full bg-orange flex items-center justify-center flex-shrink-0 hover:bg-orange-dark hover:scale-105 transition-all cursor-pointer">

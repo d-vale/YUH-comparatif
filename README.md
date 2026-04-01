@@ -2,7 +2,7 @@
 
 **Équipe DJMKEL**
 
-Landing page marketing pour [Yuh](https://www.yuh.com), la néobanque suisse de PostFinance et Swissquote.
+Landing page marketing pour [Yuh](https://www.yuh.com), la néobanque Yuh vs les autres.
 
 ## Stack
 
@@ -71,9 +71,3 @@ Définis dans `tailwind.config.js` sous `theme.extend`. Ne pas hardcoder de vale
 **Typographie** — police `font-proxima-soft`
 
 `text-title` · `text-h1` · `text-h2` · `text-h3` · `text-big-body` · `text-body-bold` · `text-button-text`
-
-## Figma
-
-- Fichier : https://www.figma.com/design/TzAYJ60Z6gJIZuHcD4Ry3X/Pages
-- Node principal : `72-7226` (LP-banque traditionnelle)
-- Voir `docs/figma-components.md` avant de créer un nouveau composant.

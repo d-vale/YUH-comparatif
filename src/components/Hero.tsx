@@ -40,7 +40,7 @@ export default function Hero() {
               découvrez l'expérience Yuh
             </h1>
             <p className="text-[20px] font-regular text-black leading-[30px]">
-              Choisir une banque en ligne peut être difficile.&nbsp; Comparez les néobanques suisses selon vos besoins et découvrez ce qui fait la différence avec Yuh.
+              Choisir une banque en ligne peut être difficile. Comparez les néobanques suisses selon vos besoins et découvrez ce qui fait la différence avec Yuh.
             </p>
           </div>
           <a

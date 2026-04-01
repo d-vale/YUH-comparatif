@@ -64,10 +64,10 @@ export default function Footer() {
               {footerLinks.map(({ heading, links }) => (
                 <div key={heading} className="min-w-[160px]">
                   <p className="text-mini-text font-regular text-grey mb-6">{heading}</p>
-                  <ul className="flex flex-col gap-5">
+                  <ul className="flex flex-col gap-3">
                     {links.map((link) => (
                       <li key={link}>
-                        <a href="#" className="text-big-body font-bold text-white hover:text-orange transition-colors">
+                        <a href="#" className="text-big-body font-extrabold text-white hover:text-orange transition-colors">
                           {link}
                         </a>
                       </li>
