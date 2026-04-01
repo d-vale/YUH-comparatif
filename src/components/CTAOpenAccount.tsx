@@ -1,7 +1,7 @@
 import { useRef, useEffect, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { STEPS } from '../data/ctaSteps';
+import { STEPS } from '@/data/ctaSteps';
 
 gsap.registerPlugin(ScrollTrigger);
 

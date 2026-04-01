@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { allBankData, tabs } from "../data/comparison";
+import { allBankData, tabs } from "@/data/comparison";
 
 export default function ComparisonSection() {
   const [activeTab, setActiveTab] = useState(0);

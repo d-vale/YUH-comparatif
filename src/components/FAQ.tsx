@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { questions } from '../data/faq'
+import { questions } from '@/data/faq'
 
 export default function FAQ() {
   const [open, setOpen] = useState<number | null>(null)

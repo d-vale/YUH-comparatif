@@ -1,4 +1,4 @@
-import { socialIcons, footerLinks } from '../data/footer'
+import { socialIcons, footerLinks } from '@/data/footer'
 
 export default function Footer() {
   return (
