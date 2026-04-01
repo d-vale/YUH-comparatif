@@ -2,6 +2,8 @@ import { useRef, useEffect, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { STEPS } from '@/data/ctaSteps';
+import Container from '@/components/ui/Container';
+import ButtonCTA from '@/components/ui/ButtonCTA';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -42,7 +44,7 @@ export default function CTAOpenAccount() {
 
   return (
     <section ref={sectionRef} className="w-full bg-white py-16">
-      <div className="max-w-[1412px] mx-auto px-10">
+      <Container>
 
         {/* Title */}
         <div className="text-center mb-10">
@@ -127,17 +129,12 @@ export default function CTAOpenAccount() {
               {step.desc}
             </p>
 
-            <a
-              href="#"
-              className="inline-block self-start bg-orange text-white text-button-text font-bold px-12 py-3 rounded-full hover:bg-orange-dark transition-colors"
-            >
-              Créez votre compte gratuit
-            </a>
+            <ButtonCTA className="self-start">Créez votre compte gratuit</ButtonCTA>
           </div>
         </div>
 
 
-      </div>
+      </Container>
     </section>
   );
 }

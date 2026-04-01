@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import { questions } from '@/data/faq'
+import Container from '@/components/ui/Container'
 
 export default function FAQ() {
   const [open, setOpen] = useState<number | null>(null)
 
   return (
     <section className="w-full bg-white py-16">
-      <div className="max-w-[1412px] mx-auto px-10">
+      <Container>
         <div className="max-w-[1174px] mx-auto">
           {/* Heading */}
           <h2 className="text-h2 font-extrabold text-black mb-12 max-w-[760px]">
@@ -56,7 +57,7 @@ export default function FAQ() {
             </div>
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   )
 }

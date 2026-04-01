@@ -1,3 +1,5 @@
+import ButtonCTA from '@/components/ui/ButtonCTA'
+
 export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 w-full z-50 px-10 pt-3">
@@ -34,12 +36,7 @@ export default function Navbar() {
             </svg>
           </button>
           {/* CTA */}
-          <a
-            href="#"
-            className="bg-orange text-white text-button-text font-bold px-6 py-2 rounded-full hover:bg-orange-dark hover:scale-105 transition-all"
-          >
-            Démarrer
-          </a>
+          <ButtonCTA size="small" className="hover:scale-105">Démarrer</ButtonCTA>
         </div>
       </div>
     </header>

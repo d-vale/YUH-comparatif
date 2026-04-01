@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { allBankData, tabs } from "@/data/comparison";
+import Container from "@/components/ui/Container";
 
 export default function ComparisonSection() {
   const [activeTab, setActiveTab] = useState(0);
@@ -7,7 +8,7 @@ export default function ComparisonSection() {
 
   return (
     <section className="w-full bg-transparent py-16">
-      <div className="max-w-[1412px] mx-auto px-10">
+      <Container>
         {/* Header */}
         <div className="text-center mb-10 max-w-[892px] mx-auto">
           <h2 className="text-h2 font-extrabold text-black mb-4">
@@ -115,7 +116,7 @@ export default function ComparisonSection() {
             </button>
           ) : <div />}
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

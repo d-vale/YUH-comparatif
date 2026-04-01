@@ -1,3 +1,6 @@
+import Container from '@/components/ui/Container'
+import ButtonCTA from '@/components/ui/ButtonCTA'
+
 export default function Hero() {
   return (
     <section className="relative w-full bg-white min-h-[700px] flex items-center">
@@ -30,7 +33,7 @@ export default function Hero() {
         </svg>
       </div>
 
-      <div className="relative max-w-[1412px] mx-auto px-10 w-full pt-[110px] pb-20 flex items-center justify-between gap-8">
+      <Container className="relative w-full pt-[110px] pb-20 flex items-center justify-between gap-8">
         {/* Left content */}
         <div className="flex flex-col gap-[30px] flex-1">
           <div className="flex flex-col gap-[13px]">
@@ -43,12 +46,7 @@ export default function Hero() {
               Choisir une banque en ligne peut être difficile. Comparez les néobanques suisses selon vos besoins et découvrez ce qui fait la différence avec Yuh.
             </p>
           </div>
-          <a
-            href="#"
-            className="inline-block self-start bg-orange text-white text-button-text font-bold px-12 py-3 rounded-full hover:bg-orange-dark transition-colors"
-          >
-            Créez votre compte gratuit
-          </a>
+          <ButtonCTA className="self-start">Créez votre compte gratuit</ButtonCTA>
         </div>
 
         {/* Right illustration */}
@@ -60,7 +58,7 @@ export default function Hero() {
             className="absolute bottom-[-60px] right-[-70px] w-[450px] opacity-70"
           />
         </div>
-      </div>
+      </Container>
     </section>
   )
 }
