@@ -1,26 +1,4 @@
-const socialIcons = [
-  { label: 'X (Twitter)', src: '/footer/X-icon.svg' },
-  { label: 'Facebook',    src: '/footer/facebook-icon.svg' },
-  { label: 'LinkedIn',    src: '/footer/linkedin-icon.svg' },
-  { label: 'YouTube',     src: '/footer/youtube-icon.svg' },
-  { label: 'Instagram',   src: '/footer/instagram-icon.svg' },
-  { label: 'TikTok',      src: '/footer/tiktok-icon.svg' },
-]
-
-const footerLinks = [
-  {
-    heading: "L'app Yuh",
-    links: ['Comment ça marche?', 'Payer', 'Épargner', 'Investir', 'Pilier 3a', 'Parrainer un ami'],
-  },
-  {
-    heading: 'Découvrir',
-    links: ['Media', 'YuhLearn', 'Swissqoin', 'Shop'],
-  },
-  {
-    heading: 'Entreprise',
-    links: ['Aide', 'Contacte-nous', 'Jobs'],
-  },
-]
+import { socialIcons, footerLinks } from '../data/footer'
 
 export default function Footer() {
   return (
