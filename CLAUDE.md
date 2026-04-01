@@ -56,3 +56,16 @@ gsap.registerPlugin(ScrollTrigger);
 
 - File: https://www.figma.com/design/TzAYJ60Z6gJIZuHcD4Ry3X/Pages
 - Main page node: `72-7226` (LP-banque traditionnelle)
+
+## Visual-first rule
+
+Le node tree Figma peut être incomplet ou cassé. **Toujours baser les décisions sur le screenshot Figma**, pas sur l'arbre de nodes. Si le rendu est correct visuellement → c'est correct.
+
+## Component loop (pour chaque nouvelle section)
+
+1. `get_design_context` + `get_screenshot` sur le node Figma
+2. Créer le TSX dans `src/components/` avec Tailwind uniquement, pas de styles inline
+3. Importer dans `src/pages/Home.tsx`
+4. Screenshot de `localhost:5173` via outil browser
+5. Comparer visuellement avec Figma → corriger si besoin (max 3 itérations)
+6. Logger : ✅ PASS ou ⚠️ NEEDS REVIEW
