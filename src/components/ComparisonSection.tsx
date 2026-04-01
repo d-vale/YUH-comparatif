@@ -7,7 +7,13 @@ export default function ComparisonSection() {
   const categories = allBankData[activeTab];
 
   return (
-    <section className="w-full bg-transparent py-10 lg:py-16">
+    <section className="relative overflow-hidden w-full bg-transparent pt-32 pb-10 lg:pt-44 lg:pb-16">
+      <img
+        src="/background-comparateur.png"
+        alt=""
+        aria-hidden="true"
+        className="absolute top-12 left-1/2 -translate-x-1/2 w-full max-w-[1800px] pointer-events-none select-none -z-10 opacity-40"
+      />
       <Container>
         {/* Header */}
         <div className="text-center mb-8 lg:mb-10 max-w-[892px] mx-auto">
