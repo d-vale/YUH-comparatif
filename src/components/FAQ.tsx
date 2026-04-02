@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { questions } from '@/data/faq'
 import Container from '@/components/ui/Container'
+import { ArrowRight } from '@/components/ui/icons'
 
 export default function FAQ() {
   const [open, setOpen] = useState<number | null>(null)
@@ -21,6 +22,7 @@ export default function FAQ() {
                 <button
                   className="w-full flex items-center justify-between py-5 text-left"
                   onClick={() => setOpen(open === i ? null : i)}
+                  aria-expanded={open === i}
                 >
                   <span className="text-body-bold lg:text-big-body-bold font-bold text-black pr-4 lg:pr-8">{q}</span>
                   <span className="peer flex-shrink-0 w-12 h-12 rounded-full border-2 border-orange flex items-center justify-center transition-colors hover:bg-orange [&:hover_path]:stroke-white">
@@ -49,10 +51,8 @@ export default function FAQ() {
               <a href="#" className="text-big-body-bold font-extrabold text-orange hover:underline">
                 D'autres questions? Clique ici pour en savoir plus
               </a>
-              <div className="w-12 h-12 rounded-full bg-orange flex items-center justify-center flex-shrink-0 hover:bg-orange-dark hover:scale-105 transition-all cursor-pointer self-start sm:self-auto">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path d="M3 8h10M9 4l4 4-4 4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
+              <div className="w-12 h-12 rounded-full bg-orange flex items-center justify-center flex-shrink-0 hover:bg-orange-dark hover:scale-105 transition-all cursor-pointer self-start sm:self-auto text-white">
+                <ArrowRight size={16} />
               </div>
             </div>
           </div>

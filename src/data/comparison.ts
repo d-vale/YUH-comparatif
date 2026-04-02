@@ -398,12 +398,12 @@ export const dataZak: Category[] = [
   },
 ];
 
-export const allBankData: Record<number, Category[]> = {
-  0: dataTraditionnelle,
-  1: dataNeon,
-  2: dataN26,
-  3: dataRevolut,
-  4: dataZak,
-};
+export const allBankData: Category[][] = [
+  dataTraditionnelle,
+  dataNeon,
+  dataN26,
+  dataRevolut,
+  dataZak,
+];
 
 export const tabs = ["Banque traditionnelle", "Neon", "N26", "Revolut", "Zak"];

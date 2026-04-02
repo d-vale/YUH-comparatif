@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { STEPS } from '@/data/ctaSteps';
 import Container from '@/components/ui/Container';
 import ButtonCTA from '@/components/ui/ButtonCTA';
+import { StepperMarker } from '@/components/ui/icons';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -112,13 +113,7 @@ export default function CTAOpenAccount() {
                   className="absolute left-1/2 -translate-x-1/2 transition-[top] duration-700 ease-in-out"
                   style={{ top: `calc(${step.markerFraction * 100}% - 8px)` }}
                 >
-                  <div className="relative flex items-center justify-center w-8 h-4">
-                    <div className="absolute w-2 h-2 rounded-[4px] bg-black" />
-                    <svg width="32" height="16" viewBox="0 0 32 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute">
-                      <path d="M3.33778 0.726074L8.72622 3.83719L3.33778 0.726074ZM2.22222 7.55541H8.44444H2.22222ZM2.89333 14.5039L8.28178 11.3927L2.89333 14.5039ZM28.6622 15.2736L23.2738 12.1625L28.6622 15.2736ZM29.7778 8.4443H23.5556H29.7778ZM29.1067 1.49585L23.7182 4.60696L29.1067 1.49585Z" fill="#151A21"/>
-                      <path d="M3.33778 0.726074L8.72622 3.83719M2.22222 7.55541H8.44444M2.89333 14.5039L8.28178 11.3927M28.6622 15.2736L23.2738 12.1625M29.7778 8.4443H23.5556M29.1067 1.49585L23.7182 4.60696" stroke="#151A21" strokeWidth="0.888889" strokeLinecap="round"/>
-                    </svg>
-                  </div>
+                  <StepperMarker />
                 </div>
               </div>
 

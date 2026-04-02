@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { allBankData, tabs } from "@/data/comparison";
 import Container from "@/components/ui/Container";
+import { ChevronLeft, ChevronRight } from "@/components/ui/icons";
 
 export default function ComparisonSection() {
   const [activeTab, setActiveTab] = useState(0);
@@ -24,7 +25,7 @@ export default function ComparisonSection() {
         {/* Header */}
         <div className="text-center mb-8 lg:mb-10 max-w-[892px] mx-auto">
           <h2 className="text-[28px] leading-[36px] lg:text-h2 font-extrabold text-black mb-4">
-            Comparez les néobanques : <br></br>découvrez l'expérience Yuh
+            Comparez les néobanques : <br className="hidden lg:block" />découvrez l'expérience Yuh
           </h2>
           <p className="text-body-bold lg:text-big-body font-regular text-grey">
             Choisir une banque en ligne peut être difficile. Comparez les
@@ -36,10 +37,15 @@ export default function ComparisonSection() {
         {/* Filter tabs — scrollable on mobile */}
         <div className="flex justify-center mb-6 lg:mb-8">
           <div className="overflow-x-auto max-w-full py-4 px-6">
-            <div className="flex gap-[21px] bg-white/70 backdrop-blur-[5px] rounded-full px-[18px] py-[6px] border border-white shadow-[0px_2px_20px_0px_rgba(0,0,0,0.08)] w-max">
+            <div
+              role="tablist"
+              className="flex gap-[21px] bg-white/70 backdrop-blur-[5px] rounded-full px-[18px] py-[6px] border border-white shadow-[0px_2px_20px_0px_rgba(0,0,0,0.08)] w-max"
+            >
               {tabs.map((tab, i) => (
                 <button
                   key={tab}
+                  role="tab"
+                  aria-selected={activeTab === i}
                   onClick={() => setActiveTab(i)}
                   className={`px-[10px] py-[10px] text-body-bold font-extrabold transition-colors whitespace-nowrap ${
                     activeTab === i ? "text-orange" : "text-grey hover:text-black"
@@ -129,10 +135,8 @@ export default function ComparisonSection() {
               onClick={() => setActiveTab(activeTab - 1)}
               className="flex items-center gap-[9px]"
             >
-              <div className="w-12 h-12 rounded-full border-2 border-orange flex items-center justify-center">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M15 18l-6-6 6-6" stroke="#fa5b35" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
+              <div className="w-12 h-12 rounded-full border-2 border-orange flex items-center justify-center text-orange">
+                <ChevronLeft size={24} />
               </div>
               <span className="hidden sm:block text-big-body font-regular text-black">{tabs[activeTab - 1]}</span>
             </button>
@@ -144,10 +148,8 @@ export default function ComparisonSection() {
               className="flex items-center gap-[9px]"
             >
               <span className="hidden sm:block text-big-body font-regular text-black">{tabs[activeTab + 1]}</span>
-              <div className="w-12 h-12 rounded-full border-2 border-orange flex items-center justify-center">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M9 6l6 6-6 6" stroke="#fa5b35" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
+              <div className="w-12 h-12 rounded-full border-2 border-orange flex items-center justify-center text-orange">
+                <ChevronRight size={24} />
               </div>
             </button>
           ) : <div />}

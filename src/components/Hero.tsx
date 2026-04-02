@@ -39,7 +39,7 @@ export default function Hero() {
           <div className="flex flex-col gap-[13px]">
             <h1 className="text-h2 lg:text-h1 font-extrabold text-black">
               <span className="text-orange">Comparez</span>{' '}les néobanques :{' '}
-              <br />
+              <br className="hidden lg:block" />
               découvrez l'expérience Yuh
             </h1>
             <p className="text-[16px] lg:text-[20px] font-regular text-black leading-[26px] lg:leading-[30px]">

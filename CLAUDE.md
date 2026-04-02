@@ -17,6 +17,7 @@ src/
     ui/
       Container.tsx         — wrapper de layout réutilisable (max-w-[1412px] mx-auto px-10)
       ButtonCTA.tsx          — bouton d'action principal (orange solid, size default/small)
+      icons.tsx              — icônes SVG réutilisables (ChevronDown, ChevronLeft, ChevronRight, ArrowRight, StepperMarker)
     Navbar.tsx              — barre de navigation
     Hero.tsx                — section héro avec background animé
     ComparisonSection.tsx   — comparaison Yuh vs néobanques (tabs)

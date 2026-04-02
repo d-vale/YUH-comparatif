@@ -11,7 +11,7 @@ export default function Footer() {
           {/* Left — CTA + social */}
           <div className="flex-shrink-0 max-w-full lg:max-w-[360px]">
             <p className="text-mini-text font-regular text-grey mb-3">Démarrer</p>
-            <h3 className="text-[22px] leading-[30px] lg:text-h3 font-extrabold text-white mb-6 lg:mb-8 leading-tight">
+            <h3 className="text-[22px] leading-[30px] lg:text-h3 font-extrabold text-white mb-6 lg:mb-8">
               Télécharge maintenant l'app Yuh et inscris-toi gratuitement!
             </h3>
             <a

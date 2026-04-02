@@ -1,5 +1,17 @@
 import { useState } from 'react'
 import ButtonCTA from '@/components/ui/ButtonCTA'
+import { ChevronDown } from '@/components/ui/icons'
+
+type NavLink = { label: string; href: string; hasDropdown?: boolean; isActive?: boolean }
+
+const NAV_LINKS: NavLink[] = [
+  { label: 'App', href: '#', hasDropdown: true },
+  { label: 'Tarifs', href: '#' },
+  { label: 'YuhLearn', href: '#' },
+  { label: 'À propos de Yuh', href: '#' },
+  { label: 'Aide', href: '#' },
+  { label: 'Comparateur', href: '#', isActive: true },
+]
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -15,15 +27,20 @@ export default function Navbar() {
 
           {/* Nav links — desktop */}
           <nav className="hidden lg:flex items-center gap-8">
-            <a href="#" className="flex items-center gap-1 text-body-bold font-extrabold text-black hover:text-orange transition-colors">
-              App
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="#fa5b35" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            </a>
-            <a href="#" className="text-body-bold font-extrabold text-black hover:text-orange transition-colors">Tarifs</a>
-            <a href="#" className="text-body-bold font-extrabold text-black hover:text-orange transition-colors">YuhLearn</a>
-            <a href="#" className="text-body-bold font-extrabold text-black hover:text-orange transition-colors">À propos de Yuh</a>
-            <a href="#" className="text-body-bold font-extrabold text-black hover:text-orange transition-colors">Aide</a>
-            <a href="#" className="text-body-bold font-extrabold text-orange">Comparateur</a>
+            {NAV_LINKS.map(({ label, href, hasDropdown, isActive }) => (
+              <a
+                key={label}
+                href={href}
+                className={`text-body-bold font-extrabold transition-colors ${
+                  isActive
+                    ? 'text-orange'
+                    : 'text-black hover:text-orange'
+                } ${hasDropdown ? 'flex items-center gap-1' : ''}`}
+              >
+                {label}
+                {hasDropdown && <ChevronDown size={12} className="text-orange" />}
+              </a>
+            ))}
           </nav>
 
           {/* Right side */}
@@ -35,9 +52,7 @@ export default function Navbar() {
                 alt="FR"
                 className="w-[22px] h-[22px] rounded-full object-cover"
               />
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <path d="M3 5l4 4 4-4" stroke="#fa5b35" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
+              <ChevronDown size={14} className="text-orange" />
             </button>
 
             {/* CTA */}
@@ -48,6 +63,7 @@ export default function Navbar() {
               className="lg:hidden flex flex-col justify-center items-center w-10 h-10 gap-[5px]"
               onClick={() => setIsOpen(!isOpen)}
               aria-label={isOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+              aria-expanded={isOpen}
             >
               <span className={`block w-6 h-0.5 bg-black transition-transform duration-300 ${isOpen ? 'rotate-45 translate-y-[7px]' : ''}`} />
               <span className={`block w-6 h-0.5 bg-black transition-opacity duration-300 ${isOpen ? 'opacity-0' : ''}`} />
@@ -61,19 +77,21 @@ export default function Navbar() {
       {isOpen && (
         <div className="lg:hidden fixed inset-0 z-40 bg-white flex flex-col pt-24 px-8 pb-10">
           <nav className="flex flex-col gap-6">
-            <a href="#" className="flex items-center gap-1 text-h3 font-extrabold text-black" onClick={() => setIsOpen(false)}>App</a>
-            <a href="#" className="text-h3 font-extrabold text-black" onClick={() => setIsOpen(false)}>Tarifs</a>
-            <a href="#" className="text-h3 font-extrabold text-black" onClick={() => setIsOpen(false)}>YuhLearn</a>
-            <a href="#" className="text-h3 font-extrabold text-black" onClick={() => setIsOpen(false)}>À propos de Yuh</a>
-            <a href="#" className="text-h3 font-extrabold text-black" onClick={() => setIsOpen(false)}>Aide</a>
-            <a href="#" className="text-h3 font-extrabold text-orange" onClick={() => setIsOpen(false)}>Comparateur</a>
+            {NAV_LINKS.map(({ label, href, isActive }) => (
+              <a
+                key={label}
+                href={href}
+                className={`text-h3 font-extrabold ${isActive ? 'text-orange' : 'text-black'}`}
+                onClick={() => setIsOpen(false)}
+              >
+                {label}
+              </a>
+            ))}
           </nav>
           <div className="mt-auto flex items-center gap-3">
             <button className="flex items-center gap-2 bg-[rgba(21,26,33,0.05)] rounded-[100px] px-3 py-2">
               <img src="https://flagcdn.com/w40/fr.png" alt="FR" className="w-[22px] h-[22px] rounded-full object-cover" />
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <path d="M3 5l4 4 4-4" stroke="#fa5b35" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
+              <ChevronDown size={14} className="text-orange" />
             </button>
           </div>
         </div>
