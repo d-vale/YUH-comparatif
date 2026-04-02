@@ -66,7 +66,14 @@ export default function CTAOpenAccount() {
   const step = STEPS[stepIdx];
 
   return (
-    <section ref={sectionRef} className="w-full bg-white py-10 lg:py-16">
+    <section ref={sectionRef} className="relative w-full bg-white py-10 lg:py-16">
+      <img
+        src="/background-cta.png"
+        alt=""
+        aria-hidden="true"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full pointer-events-none select-none -z-20"
+      />
+      <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-white to-transparent pointer-events-none -z-10" />
       <Container>
 
         {/* Title */}

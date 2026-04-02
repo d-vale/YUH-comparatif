@@ -7,12 +7,18 @@ export default function ComparisonSection() {
   const categories = allBankData[activeTab];
 
   return (
-    <section className="relative overflow-hidden w-full bg-transparent pt-32 pb-10 lg:pt-44 lg:pb-16">
+    <section className="relative z-10 overflow-hidden w-full bg-transparent pt-32 pb-10 lg:pt-44 lg:pb-16">
       <img
         src="/background-comparateur.png"
         alt=""
         aria-hidden="true"
-        className="absolute top-12 left-1/2 -translate-x-1/2 w-full max-w-[1800px] pointer-events-none select-none -z-10 opacity-40"
+        className="absolute top-12 left-1/2 -translate-x-1/2 w-full pointer-events-none select-none -z-10 opacity-40"
+      />
+      <img
+        src="/background-mid-comparateur.png"
+        alt=""
+        aria-hidden="true"
+        className="absolute top-[1400px] lg:top-[600px] left-1/2 -translate-x-1/2 w-full pointer-events-none select-none -z-10"
       />
       <Container>
         {/* Header */}
@@ -117,7 +123,7 @@ export default function ComparisonSection() {
         </div>
 
         {/* Navigation arrows */}
-        <div className="flex justify-between items-center mt-9">
+        <div className="relative z-10 flex justify-between items-center mt-9">
           {activeTab > 0 ? (
             <button
               onClick={() => setActiveTab(activeTab - 1)}
@@ -147,6 +153,7 @@ export default function ComparisonSection() {
           ) : <div />}
         </div>
       </Container>
+      <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-b from-transparent to-white pointer-events-none" />
     </section>
   );
 }

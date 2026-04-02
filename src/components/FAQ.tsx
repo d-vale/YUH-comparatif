@@ -6,7 +6,7 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(null)
 
   return (
-    <section className="w-full bg-white py-10 lg:py-16">
+    <section className="relative z-10 w-full mt-14 lg:mt-24 py-10 lg:py-16">
       <Container>
         <div className="max-w-[1174px] mx-auto">
           {/* Heading */}
